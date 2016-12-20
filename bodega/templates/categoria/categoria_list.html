@@ -1,0 +1,31 @@
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>id Categoria</td>
+			<td>Nombre</td>
+			<td>Descripción</td>
+			<td>Acciones</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for solicitud in object_list %}
+		<tr>
+			<td>{{ categoria.id_categoria }}</td>
+			<td>{{ categoria.nombre }} {{solicitud.persona.apellidos}}</td>
+			<td>{{ categoria.descripcion }}</td>
+			<td>
+				<a class="btn btn-primary" href="#">Editar</a>
+				<a class="btn btn-danger" href="#">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de categorias</h1>
+		{% endif %}
+	</tbody>
+</table> 
+
+{% endblock%}

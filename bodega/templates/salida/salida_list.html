@@ -1,0 +1,34 @@
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>Id salida</td>
+			<td>Fecha</td>
+			<td>Producto</td>
+			<td>Cantidad</td>
+			<td>Acciones</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for solicitud in object_list %}
+		<tr>
+			<td>{{ salida.id_salida }}</td>
+			<td>{{ salida.fecha }} </td>
+			<td>{{ salida.producto.nombre }}</td>
+			<td>{{ salida.cantidad }}</td>
+			
+			<td>
+				<a class="btn btn-primary" href="#">Editar</a>
+				<a class="btn btn-danger" href="#">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de salidas</h1>
+		{% endif %}
+	</tbody>
+</table> 
+
+{% endblock%}

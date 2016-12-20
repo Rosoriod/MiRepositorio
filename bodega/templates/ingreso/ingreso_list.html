@@ -1,0 +1,34 @@
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>id ingreso</td>
+			<td>Fecha</td>
+			<td>producto</td>
+			<td>cantidad</td>
+			<td>Acciones</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for solicitud in object_list %}
+		<tr>
+			<td>{{ ingreso.id_ingreso }}</td>
+			<td>{{ ingreso.fecha }} </td>
+			<td>{{ ingreso.producto.nombre }}</td>
+			<td>{{ ingreso.cantidad }}</td>
+			
+			<td>
+				<a class="btn btn-primary" href="#">Editar</a>
+				<a class="btn btn-danger" href="#">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de ingresos</h1>
+		{% endif %}
+	</tbody>
+</table> 
+
+{% endblock%}
